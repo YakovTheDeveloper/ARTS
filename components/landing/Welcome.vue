@@ -3,6 +3,7 @@ import Logo from 'assets/graphics/logo.svg'
 
 import Explore from '~/components/landing/Explore.vue';
 </script>
+<NuxtImg src="images/photos/landing/mobile/welcome-1.jpg" alt="Image" class="photo" />
 
 <template>
 
@@ -12,34 +13,36 @@ import Explore from '~/components/landing/Explore.vue';
         </Typo> -->
         <div class="main">
             <article class="text-content">
-                <Typo variant="h1" align="center" color="black-2">
-                    Приятно познакомиться
-                </Typo>
-                <Typo>
-                    Уход за собой — комплекс процедур, которые продлевают молодость, помогают сохранить
-                    положительный
-                    настрой.
-                    Сияющая кожа, чистые аккуратно уложенные волосы, привлекательный макияж, стильный маникюр,
-                    красивая
-                    одежда —
-                    все это орудия, с помощью которых каждая женщина может стать королевой.
-                </Typo>
-                <Typo>
-                    {{ ' ' }}
-                </Typo>
+                <div>
+                    <Typo variant="h1" align="center" color="black-2" offset>
+                        Приятно познакомиться
+                    </Typo>
+                    <Typo>
+                        Уход за собой — комплекс процедур, которые продлевают молодость, помогают сохранить
+                        положительный
+                        настрой.
+                        Сияющая кожа, чистые аккуратно уложенные волосы, привлекательный макияж, стильный маникюр,
+                        красивая
+                        одежда —
+                        все это орудия, с помощью которых каждая женщина может стать королевой.
+                    </Typo>
+                </div>
             </article>
             <div class="image-container">
-                <Logo class="logo" :fontControlled="false" />
+                <!-- <Logo class="logo" :fontControlled="false" /> -->
                 <NuxtImg src="images/photos/welcome.jpg" alt="Image" class="photo" />
             </div>
         </div>
+        <!-- <div class="image-container-mobile">
+            <NuxtImg src="images/photos/landing/mobile/welcome-7.jpg" alt="Image" class="photo-mobile" />
+        </div> -->
         <Categories class="categories" />
     </Card>
 </template>
 
 <style scoped>
 .welcome {
-    height: 100vh;
+    height: calc(100vh - 80px + var(--container-padding));
 }
 
 .container {
@@ -49,26 +52,41 @@ import Explore from '~/components/landing/Explore.vue';
 }
 
 .main {
-    margin-top: 40px;
+    margin-top: 10px;
     display: grid;
     grid-template-columns: 5fr 6fr;
     gap: 40px;
+    z-index: 1;
 }
 
 .text-content {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    padding: 20px 0;
+    justify-content: center;
+    padding: 10px 0;
 }
 
 .image-container {
     position: relative;
 }
 
+.image-container-mobile{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 .photo {
     height: 100%;
     border-radius: var(--border-radius-m);
+}
+
+.photo-mobile {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
 
 .categories {
@@ -82,6 +100,6 @@ import Explore from '~/components/landing/Explore.vue';
     /* transform: translateX(-50%); */
 
     width: 135px;
-    color:white;
+    color: white;
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
     <div class="price-list">
         <div v-for="(data, index) in priceData" :key="index" class="price-line">
-            <div class="service">
+            <div class="service" @click="openModal(data)">
                 <p class="service-name">{{ data.displayName }}</p>
                 <p v-show="data.description" class="service-description">{{ data.description }}</p>
             </div>
@@ -21,27 +21,28 @@
             </div>
         </div>
     </div>
-</template>
-<!-- <template>
-    <div class="price-list">
-        <div v-for="(data, index) in priceData" :key="index" class="price-line">
-            <p class="service-name">{{ data.displayName }}</p>
-            <p v-show="data.description" class="service-description">{{ data.description }}</p>
-            <p class="price">
-                <span v-show="data.border" class="price-border-text">
-                    от
-                </span>
-                {{ data.price }}
-            </p>
+    <Modal :isVisible="isModalVisible" @close="closeModal">
+        <div class="modal-service">
+            <Card>
+                <Typo variant="h2" align="center" offset>Записаться</Typo>
+                <Typo variant="h2" align="center">{{ selectedService?.description }}</Typo>
+                <ServiceSignUpForm/>
+            </Card>
         </div>
-    </div>
-</template> -->
+    </Modal>
+</template>
 
 <style>
 .service {
     display: flex;
     flex-direction: column;
     gap: 5px;
+
+    cursor: pointer;
+
+    &:hover {
+        opacity: 0.6;
+    }
 }
 
 .price-list {
@@ -79,7 +80,7 @@
     opacity: 0.75;
 }
 
-.price-container{
+.price-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: 200px;
@@ -91,6 +92,27 @@
 
 
 <script setup>
+import Card from '~/components/Card.vue';
+import ServiceSignUpForm from '~/components/form/ServiceSignUpForm.vue';
+
+
+const isModalVisible = ref(false);
+const selectedService = ref(null);
+
+const openModal = (service) => {
+    selectedService.value = service;
+    isModalVisible.value = true;
+};
+
+const closeModal = () => {
+    selectedService.value = null;
+    isModalVisible.value = false;
+};
+
+const acceptService = () => {
+
+}
+
 
 defineProps({
     priceData: Array,

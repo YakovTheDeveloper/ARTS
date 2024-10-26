@@ -22,22 +22,31 @@
 <style scoped>
 .team {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    /* grid-template-rows: repeat(auto-fit, minmax(440px, 1fr)); */
+    /* Adjust 200px as needed */
+    gap: 50px var(--items-gap);
+    align-items: center;
+    justify-content: center;
+
+    @media (max-width: 480px) {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
 }
 
 .member {
-    /* Added transition for smooth effect */
-    /* Initial subtle shadow */
-
+    /* height: 100%; */
+    flex-shrink: 0;
+    flex-grow: 0;
+    min-width: 200px;
 }
 
 .member-photo-part {
-    height: 400px;
+    height: min(65vh, 650px);
     padding: 20px;
     position: relative;
     background-color: rgb(103, 138, 138);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--human-card-box-shadow);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border-radius: 25px;
     overflow: hidden;
@@ -45,9 +54,7 @@
     flex-direction: column;
     justify-content: flex-end;
 
-
     &:hover {
-
         cursor: pointer;
         transform: translate(0px, 2px);
 
@@ -55,6 +62,8 @@
         -moz-box-shadow: var(--box-shadow-card-hover);
         box-shadow: var(--box-shadow-card-hover);
     }
+
+
 }
 
 .member-name {
@@ -80,6 +89,8 @@
     left: 0;
     right: 0;
     bottom: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .photo {
@@ -89,7 +100,7 @@
     width: 100%;
 }
 
-.caption{
+.caption {
     font-size: 1rem;
     font-family: 'Raleway', sans-serif;
     font-weight: 400;

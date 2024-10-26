@@ -13,8 +13,8 @@
             </nav>
             <div class="contacts">
                 <p>жк Futura, ул. Холмогорова, 17А</p>
-                <p>+7 926 100 33 38</p>
                 <p>info@beautylabstore.ru</p>
+                <p>+7 926 100 33 38</p>
             </div>
         </div>
     </footer>
@@ -25,7 +25,9 @@
 <style scoped>
 .footer {
     width: 100%;
-    background-color: rgb(36, 36, 39);
+    background-color: rgb(179, 179, 179);
+    background: linear-gradient(153deg, #2D3E4D 0%, rgb(0, 0, 0) 35%, rgb(36, 36, 36) 100%);
+
     border-radius: var(--border-radius-l) var(--border-radius-l) 0 0;
 }
 
@@ -34,14 +36,14 @@
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    gap: 30px;
+    gap: var(--items-gap);
     padding: 30px var(--container-padding) 30px;
     margin: 0 auto;
 }
 
 .nav{
     display: flex;
-    gap: 30px;
+    gap: var(--items-gap);
     justify-content: space-between;
     align-items: center;
 }
@@ -50,12 +52,13 @@
     display: flex;
     flex-direction: column;
     align-items: start;
-    gap: 30px;
+    gap: var(--items-gap);
 }
 
 .contacts {
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
     gap: 10px;
     color: white;
     font-size: 0.8rem;
@@ -74,7 +77,7 @@
 }
 
 .link {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     color: white;
     text-decoration: none;
 }

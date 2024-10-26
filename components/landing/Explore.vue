@@ -26,13 +26,19 @@
 .explore {
     max-width: var(--content-width);
     width: 100%;
+    display: flex;
 }
 
 .content {
     display: flex;
+    width: 100%;
     flex-direction: column;
-    height: 100%;
+    min-height: 60vh;
     gap: var(--items-gap);
+
+    @media (max-width: 575.98px) {
+        justify-content: space-between;
+    }
 }
 
 .feature {
@@ -40,7 +46,7 @@
     flex-grow: 1;
     background: rgb(74, 73, 88);
     background: linear-gradient(153deg, #2D3E4D 0%, rgb(0, 0, 0) 35%, rgb(0, 0, 0) 100%);
-    /* border-radius: var(--border-radius-m); */
+    border-radius: var(--border-radius-m);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -56,7 +62,7 @@
     position: relative;
     z-index: 1;
     padding: 20px;
-    text-transform: uppercase;
+    text-transform: lowercase;
 
     * {
         text-shadow: rgba(0, 0, 0, 0.25) 1px 1px 1px;
@@ -76,7 +82,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* object-position: top center; */
+    object-position: top center;
     opacity: 0.5;
 }
 </style>
@@ -86,7 +92,7 @@ import Card from '~/components/Card.vue';
 
 const features = [
     {
-        imgSrc: 'images/photos/2.jpg',
+        imgSrc: 'images/photos/landing/explore/about-us.jpg',
         label: 'Подробнее о нас',
         link: '/'
     },
@@ -99,7 +105,7 @@ const features = [
     {
         imgSrc: 'images/photos/futura-building.png',
         label: 'Где мы находимся',
-        link: '/'
+        link: '/location'
     },
 
 ]

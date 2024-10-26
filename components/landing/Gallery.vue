@@ -1,24 +1,30 @@
 <template>
-    <div class="container">
-        <div class="background">
-        </div>
-        <div class="parallax-container">
-            <div class="parallax-bg"></div>
-            <div class="inner">
-                <div class="content">
-                    <slot></slot>
+    <Card>
+        <div class="container">
+            <div class="gallery">
+                <div class="inner">
+                    <div class="content">
+                        <Typo variant="h1" color="white">
+                            Комфортная атмосфера
+                        </Typo>
+                        <Typo variant="h2" color="white">
+                            в которую хочется возвращаться
+                        </Typo>
+                    </div>
+                    <Button class="gallery-button">
+                        галерея
+                    </Button>
                 </div>
-                <Button class="gallery-button">
-                    галерея
-                </Button>
             </div>
+            <Explore />
         </div>
-        <Explore />
-    </div>
+    </Card>
 </template>
 
 <script setup>
+import Card from '~/components/Card.vue';
 import Explore from '~/components/landing/Explore.vue';
+import Typo from '~/components/Typo.vue';
 import Button from '~/components/ui/Button.vue';
 
 </script>
@@ -40,36 +46,20 @@ import Button from '~/components/ui/Button.vue';
 }
 
 
-.background {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    opacity: 0.5;
-    /* background: url('images/bg/background-2.webp') center no-repeat; */
-}
 
-.parallax-container {
-    /* max-width: max(400px, 50%); */
+.gallery {
     position: relative;
     height: 470px;
     overflow: hidden;
     z-index: 1;
-    border-bottom-right-radius: var(--border-radius-m);
+    border-radius: var(--border-radius-m);
     grid-column: span 2;
-    /* margin: auto; */
 
-    @media (max-width: 575.98px) {
-        /* grid-column: span 3; */
-    }
+    background-image: url('/images/photos/4.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
-
-/* .parallax-container {
-    width: 100%;
-    position: relative;
-    height: 470px;
-    overflow: hidden;
-    margin-bottom: 60px;
-} */
 
 .parallax-bg {
     position: absolute;

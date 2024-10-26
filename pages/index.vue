@@ -5,6 +5,7 @@ import Welcome from '~/components/landing/Welcome.vue';
 import ProductsUse from '~/components/landing/ProductsUse.vue';
 import OurClients from '~/components/landing/OurClients.vue';
 import Explore from '~/components/landing/Explore.vue';
+import Gallery from '~/components/landing/Gallery.vue';
 </script>
 
 <template>
@@ -21,14 +22,7 @@ import Explore from '~/components/landing/Explore.vue';
     <!-- <Explore /> -->
     <OurClients />
     <ProductsUse />
-    <Parallax>
-        <Typo variant="h1" color="white">
-            Комфортная атмосфера
-        </Typo>
-        <Typo variant="h2" color="white">
-            в которую хочется возвращаться
-        </Typo>
-    </Parallax>
+    <Gallery/>
     <OurTeam />
 
 </template>

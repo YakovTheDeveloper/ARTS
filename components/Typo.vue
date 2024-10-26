@@ -54,9 +54,8 @@ const computedClasses = computed(() => {
 <style scoped>
 .typo--h1 {
     font-size: 1.4rem;
-    font-family: 'Raleway', sans-serif;
     font-family: "Montserrat", sans-serif;
-    font-weight: 800;
+    font-weight: 600;
     /* text-shadow: rgba(8, 0, 67, 0.154) 1px 0 5px; */
     letter-spacing: -1px;
     /* text-transform: uppercase; */
@@ -78,8 +77,8 @@ const computedClasses = computed(() => {
 
 .typo--caption {
     font-family: 'Raleway', sans-serif;
-    font-size: 1rem;
-    font-weight: 700;
+    font-size: 1.2rem;
+    font-weight: 600;
 }
 
 .typo--color-white {

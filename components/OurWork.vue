@@ -23,7 +23,7 @@
 .our-work {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: var(--items-gap);
 }
 
 .photo-container {

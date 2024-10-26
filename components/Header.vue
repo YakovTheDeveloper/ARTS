@@ -1,7 +1,7 @@
 <template>
     <header class="header">
-        <NuxtLink v-show="$route.path !== '/'" to="/">
-            <Logo class="logo" :fontControlled="false" v-show="$route.path !== '/'" />
+        <NuxtLink  to="/">
+            <Logo class="logo" :fontControlled="false"  />
         </NuxtLink>
     </header>
 </template>
@@ -11,11 +11,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px 10px 5px;
+    padding: 30px 10px 5px;
 }
 
 .logo {
-    height: 60px;
+    height: 40px;
 }
 </style>
 
@@ -23,3 +23,5 @@
 import Logo from 'assets/graphics/logo.svg'
 
 </script>
+
+<!-- v-show="$route.path !== '/'" -->

@@ -6,15 +6,18 @@
         <Team :people="[
             {
                 name: 'Екатерина',
-                imgSrc: '/images/photos/master-ekaterina.jpg'
+                imgSrc: '/images/photos/master-ekaterina.jpg',
+                label: 'мастер-маникюрист'
             },
             {
                 name: 'Светлана',
-                imgSrc: '/images/photos/master-svetlana.jpg'
+                imgSrc: '/images/photos/master-svetlana.jpg',
+                label: 'мастер по волосам'
             },
             {
                 name: 'Татьяна',
-                imgSrc: '/images/photos/master-tatiana.jpg'
+                imgSrc: '/images/photos/master-tatiana.jpg',
+                label: 'мастер-визажист'
             },
         ]" />
 

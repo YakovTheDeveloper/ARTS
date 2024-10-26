@@ -23,21 +23,29 @@ const repeatedBrands = [...brands, ...brands];
 .brands {
     overflow: hidden;
     width: 100%;
-    padding: 120px 0 160px;
 }
 
 .brand-track {
     display: flex;
-    gap: 120px; /* Space between logos */
-    animation: scroll 30s linear infinite;
+    gap: 120px;
+    /* Space between logos */
+    animation: scroll 10s linear infinite;
+    padding: 90px 0 130px;
+
+    @media (max-width: 575.98px) {
+        gap: 50px;
+        padding: 10px 0 70px;
+        animation: scroll 5s linear infinite;
+    }
 }
 
 .brand-container {
-    flex: 0 0 auto; /* Prevents items from wrapping */
+    flex: 0 0 auto;
+    /* Prevents items from wrapping */
 }
 
 .logo {
-    height: 50px;
+    height: var(--our-brands-height);
     object-fit: contain;
 }
 
@@ -46,6 +54,7 @@ const repeatedBrands = [...brands, ...brands];
     0% {
         transform: translateX(0);
     }
+
     100% {
         transform: translateX(-50%);
     }

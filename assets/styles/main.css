@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
 @font-face {
     font-family: 'PTRootUIWebVF';
     src:
@@ -43,13 +44,6 @@
     src: url('../fonts/Raleway-Black.ttf') format('truetype');
 }
 
-@font-face {
-    font-family: 'Playfair Display';
-    font-weight: 400;
-    font-style: normal;
-    src: url('../fonts/PlayfairDisplay-Regular.ttf') format('truetype');
-}
-
 
 :root {
     --container-padding: 20px;
@@ -63,7 +57,47 @@
     --border-radius-l: 30px;
 
     --items-gap: 30px;
+
+    --card-grid: 1fr 1fr 1fr;
+
+    --our-brands-height: 50px;
+
+    --human-card-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
+    /* --root-font-size: 18px; */
+
+    @media (max-width: 575.98px) {
+        --root-font-size: 15px;
+        --items-gap: 15px;
+        --card-grid: 1fr;
+        --container-padding: 10px;
+        --our-brands-height: 25px;
+        --human-card-box-shadow: none;
+    }
+
+    /* Small devices (landscape phones, 576px and up) */
+    @media (min-width: 576px) and (max-width: 767.98px) {
+        --root-font-size: 15px;
+        --items-gap: 15px;
+        --card-grid: 1fr;
+    }
+
+    /* Medium devices (tablets, 768px and up) */
+    @media (min-width: 768px) and (max-width: 991.98px) {
+        --root-font-size: 16px;
+    }
+
+    /* Large devices (desktops, 992px and up) */
+    @media (min-width: 992px) and (max-width: 1199.98px) {
+        --root-font-size: 16px;
+    }
+
+    /* Extra large devices (large desktops, 1200px and up) */
+    @media (min-width: 1200px) {
+        --root-font-size: 18px;
+    }
 }
+
 
 
 html,
@@ -163,7 +197,7 @@ body {
 }
 
 html {
-    font-size: 18px;
+    font-size: var(--root-font-size);
 }
 
 /* HTML5 display-role reset for older browsers */

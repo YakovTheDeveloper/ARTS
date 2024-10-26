@@ -19,7 +19,7 @@
 .price-container{
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: var(--items-gap);
     width: 100%;
 }
 
@@ -28,7 +28,7 @@
     padding: 10vh var(--container-padding) 0;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 30px;
+    gap: var(--items-gap);
 }
 
 .categories {
