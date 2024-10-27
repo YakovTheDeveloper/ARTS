@@ -10,7 +10,7 @@
                 </div>
 
                 <div class="text-content">
-                    <Typo variant="caption" color="white">
+                    <Typo variant="h2" color="white">
                         {{ feature.label }}
                     </Typo>
                 </div>

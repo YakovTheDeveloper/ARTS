@@ -4,7 +4,14 @@
     <main class="main">
       <NuxtPage />
     </main>
-    <Footer/>
+    <Footer />
+    <OrderButton @click="openModal" />
+    <Modal :isVisible="isModalVisible" @close="closeModal">
+
+      <Typo variant="h2" align="center" offset>Записаться или задать вопрос</Typo>
+      <ServiceSignUpForm />
+
+    </Modal>
   </div>
 </template>
 
@@ -18,3 +25,19 @@
   /* gap: 10px; */
 }
 </style>
+
+<script setup lang="ts">
+import Card from '~/components/Card.vue';
+import OrderButton from '~/components/common/OrderButton.vue';
+import ServiceSignUpForm from '~/components/form/ServiceSignUpForm.vue';
+import Modal from '~/components/Modal.vue';
+const isModalVisible = ref(false);
+
+const openModal = () => {
+  isModalVisible.value = true;
+};
+
+const closeModal = () => {
+  isModalVisible.value = false;
+};
+</script>

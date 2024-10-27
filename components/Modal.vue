@@ -34,6 +34,9 @@
   }
   
   .modal-content {
+    background-color: var(--color-white);
+    padding: 80px 50px 40px;
+    border-radius: var(--border-radius-m);
     position: relative;
     max-width: 90%;
     max-height: 90%;
@@ -52,7 +55,7 @@
     right: 10px;
     background: transparent;
     border: none;
-    color: white;
+    color: rgba(0, 0, 0, 0.183);
     font-size: 1.5em;
     cursor: pointer;
 

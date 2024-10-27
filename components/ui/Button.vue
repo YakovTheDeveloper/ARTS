@@ -65,11 +65,13 @@ function handleClick(event) {
 }
 
 .base-button--secondary {
-    background-color: #6c757d;
-    color: #fff;
+    color: #000000;
+    border: 1px solid black;
+    background-color: white;
 }
 
 .base-button--secondary:hover:not(.is-disabled) {
-    background-color: #565e64;
+    background-color: white;
+    opacity: 0.6;
 }
 </style>

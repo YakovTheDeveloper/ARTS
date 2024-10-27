@@ -19,7 +19,7 @@
     </div>
 </template>
 
-<style>
+<style scoped>
 .our-work {
     display: flex;
     flex-direction: column;
@@ -27,7 +27,7 @@
 }
 
 .photo-container {
-    height: 400px;
+    max-height: 400px;
     background-color: rgb(79, 77, 76);
     position: relative;
     overflow: hidden;
@@ -44,7 +44,7 @@
     /* Adjust based on your needs */
     /* Maximum width */
     min-height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     /* Maintain aspect ratio */
 }
 

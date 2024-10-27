@@ -15,9 +15,9 @@
                 imgSrc: '/images/photos/customers/landing/2.jpg'
             },
             {
-                name: 'Анна',
+                name: 'Анастасия',
                 label:'вечерний макияж',
-                imgSrc: '/images/photos/customers/landing/3.jpg'
+                imgSrc: '/images/photos/customers/landing/customer-anastasia.jpg'
             },
         ]" />
 

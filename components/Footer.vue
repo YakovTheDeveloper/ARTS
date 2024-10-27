@@ -4,6 +4,11 @@
             <nav class="nav">
                 <div class="data">
                     <Logo class="logo" :fontControlled="false" />
+                    <div class="contacts">
+                        <p>жк Futura, ул. Холмогорова, 17А</p>
+                        <p>info@beautylabstore.ru</p>
+                        <p>+7 926 100 33 38</p>
+                    </div>
                 </div>
                 <ul class="list">
                     <li v-for="(item) in menuItems" class="list-item">
@@ -11,11 +16,6 @@
                     </li>
                 </ul>
             </nav>
-            <div class="contacts">
-                <p>жк Futura, ул. Холмогорова, 17А</p>
-                <p>info@beautylabstore.ru</p>
-                <p>+7 926 100 33 38</p>
-            </div>
         </div>
     </footer>
 </template>
@@ -37,11 +37,11 @@
     justify-content: space-between;
     flex-direction: column;
     gap: var(--items-gap);
-    padding: 30px var(--container-padding) 30px;
+    padding: calc(var(--container-padding) * 2.5) var(--container-padding);
     margin: 0 auto;
 }
 
-.nav{
+.nav {
     display: flex;
     gap: var(--items-gap);
     justify-content: space-between;
@@ -52,7 +52,8 @@
     display: flex;
     flex-direction: column;
     align-items: start;
-    gap: var(--items-gap);
+    justify-content: space-between;
+    gap: 30px;
 }
 
 .contacts {
@@ -68,7 +69,12 @@
     display: flex;
     height: fit-content;
     flex-wrap: wrap;
-    gap: 35px;
+    gap: var(--items-gap);
+
+
+    @media (max-width: 575.98px) {
+        flex-direction: column;
+    }
 }
 
 .list-item {
@@ -83,7 +89,7 @@
 }
 
 .logo {
-    height: 55px;
+    height: max(40px, var(--our-brands-height));
     color: white;
 }
 </style>

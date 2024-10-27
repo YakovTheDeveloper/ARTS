@@ -46,6 +46,7 @@
 
 
 :root {
+    --color-white: #faf9f8;
     --container-padding: 20px;
 
     --content-width: min(100%, 1140px);
@@ -193,7 +194,7 @@ video {
 
 body {
     font-family: 'PTRootUIWebVF', sans-serif;
-    background-color: #faf9f8;
+    background-color: var(--color-white);
 }
 
 html {

@@ -57,6 +57,11 @@ import Explore from '~/components/landing/Explore.vue';
     grid-template-columns: 5fr 6fr;
     gap: 40px;
     z-index: 1;
+
+    @media (max-width: 575.98px) {
+        display: flex;
+        flex-direction: column-reverse;
+    }
 }
 
 .text-content {
@@ -67,20 +72,21 @@ import Explore from '~/components/landing/Explore.vue';
 }
 
 .image-container {
+    max-height: 50vh;
     position: relative;
-}
+    border-radius: var(--border-radius-m);
+    overflow: hidden;
 
-.image-container-mobile{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
+    @media (max-width: 575.98px) {
+        width: 70%;
+        margin: auto;
+    }
 }
 
 .photo {
     height: 100%;
-    border-radius: var(--border-radius-m);
+    width: 100%;
+    object-fit: cover;
 }
 
 .photo-mobile {

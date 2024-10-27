@@ -2,7 +2,17 @@
     <div class="container">
         <section class="section">
             <div class="price-container">
-                <slot name="heading"></slot>
+
+                <Typo variant="h1">
+                    <slot name="heading">
+                    </slot>
+                </Typo>
+                <!-- <div class="price-description">
+                        <span>мастер</span>
+                        <span>эксперт</span>
+                    </div> -->
+
+
                 <slot name="price"></slot>
             </div>
             <slot name="our-works"></slot>
@@ -16,11 +26,11 @@
     max-width: var(--content-width);
 }
 
-.price-container{
+.price-container {
     display: flex;
     flex-direction: column;
-    gap: var(--items-gap);
     width: 100%;
+    gap: 10px;
 }
 
 .section {
@@ -28,7 +38,12 @@
     padding: 10vh var(--container-padding) 0;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: var(--items-gap);
+    gap: 130px;
+
+    @media (max-width: 575.98px) {
+        grid-template-columns: 1fr;
+    }
+
 }
 
 .categories {

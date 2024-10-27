@@ -25,7 +25,7 @@
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     /* grid-template-rows: repeat(auto-fit, minmax(440px, 1fr)); */
     /* Adjust 200px as needed */
-    gap: 50px var(--items-gap);
+    gap: 60px var(--items-gap);
     align-items: center;
     justify-content: center;
 
@@ -78,8 +78,9 @@
     z-index: 1;
     text-shadow: rgba(0, 0, 0, 0.3) 1px 1px 1px;
 
-    span {
-        font-weight: 100;
+    @media (max-width: 480px) {
+        font-size: 1.6rem;
+        font-weight: 500;
     }
 }
 
@@ -106,6 +107,15 @@
     font-weight: 400;
     margin-top: var(--container-padding);
     text-align: center;
+
+    @media (max-width: 480px) {
+        font-size: 1.3rem;
+        font-family: 'Montserrat', sans-serif;
+        margin-top: calc(var(--container-padding) * 1.5);
+        padding-right: 20px;
+        text-align: right;
+
+    }
 }
 </style>
 

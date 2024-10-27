@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import CategoryLayout from '~/components/layout/CategoryLayout.vue';
 
-const priceData = [
+const priceData = {
+    priceVarints: ['мастер', 'эксперт'],
+    content: [
     {
         displayName: 'Тонирование/ стойкое окрашивание',
         price: 3500,
@@ -82,12 +84,13 @@ const priceData = [
         price: 2500,
     },
 ]
+}
 </script>
 
 <template>
     <CategoryLayout>
         <template #heading>
-            <Typo variant="h1">Волосы</Typo>
+            Волосы
         </template>
 
         <template #price>
