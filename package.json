@@ -5,7 +5,7 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
-    "deploy": "gh-pages -d .output/public",
+    "deploy": "gh-pages -d .output/public -r git@github.com:YakovTheDeveloper/futura-beauty.git",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
