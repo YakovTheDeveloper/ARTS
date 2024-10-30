@@ -20,7 +20,7 @@ export default defineEventHandler(async (event) => {
   if (contactMethod) {
     message += contactMethod === 'call'
       ? `📞 *Перезвонить* \n${telephone}\n`
-      : `💬 *Написать в* \n${messagingApp}\n`;
+      : `💬 *Написать в* \n${messagingApp}\n${telephone}`;
   }
 
 

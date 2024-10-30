@@ -80,29 +80,31 @@
 </style>
 
 <script setup>
-const categories = [{
-    name: 'макияж',
-    link: 'makeup'
-},
-{
-    name: 'маникюр',
-    link: 'manicure'
-},
-{
-    name: 'педикюр',
-    link: 'pedicure'
-},
-{
-    name: 'косметология',
-    link: 'cosmetology'
-},
-{
-    name: 'волосы',
-    link: 'hair'
-},
-{
-    name: 'шугаринг',
-    link: 'sugaring'
-},
+const categories = [
+    {
+        name: 'маникюр',
+        link: 'manicure'
+    },
+    {
+        name: 'педикюр',
+        link: 'pedicure'
+    },
+    {
+        name: 'волосы',
+        link: 'hair'
+    },
+    {
+        name: 'макияж и брови',
+        link: 'makeup'
+    },
+    {
+        name: 'косметология',
+        link: 'cosmetology'
+    },
+
+    {
+        name: 'шугаринг',
+        link: 'sugaring'
+    },
 ]
 </script>

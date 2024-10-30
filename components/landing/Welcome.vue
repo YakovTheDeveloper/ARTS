@@ -3,7 +3,7 @@ import Logo from 'assets/graphics/logo.svg'
 
 import Explore from '~/components/landing/Explore.vue';
 </script>
-<NuxtImg src="images/photos/landing/mobile/welcome-1.jpg" alt="Image" class="photo" />
+<!-- <NuxtImg src="images/photos/landing/mobile/welcome-1.jpg" alt="Image" class="photo" /> -->
 
 <template>
 

@@ -1,9 +1,9 @@
 <template>
     <div class="price-list">
 
-        <header class="price-description" v-show="priceData.priceVarints">
+        <header class="price-description" v-show="priceData.priceVariants">
             <div class="price-container">
-                <span class="price-cell price-cell-heading" v-for="(variant) in priceData.priceVarints">
+                <span class="price-cell price-cell-heading" v-for="(variant) in priceData.priceVariants">
                     {{ variant }}
                 </span>
             </div>
@@ -57,7 +57,7 @@
 .price-list {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: var(--items-gap);
 }
 
 .price-header {
@@ -81,13 +81,19 @@
     grid-template-columns: 2fr 1fr;
     gap: 5px;
     position: relative;
-    padding: 15px 0;
+    /* padding: 0 0 15px; */
     transition: none;
 
     &:hover {
         /* color: white; */
     }
 
+
+
+}
+
+.line:first-child {
+    padding-top: 0;
 }
 
 /* .line:hover:before{
@@ -113,7 +119,7 @@
 }
 
 .service-name {
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 300;
 }
 
@@ -133,6 +139,7 @@
     font-weight: 200;
     font-style: italic;
     font-size: 1rem;
+    white-space: wrap;
 }
 
 .price-cell {

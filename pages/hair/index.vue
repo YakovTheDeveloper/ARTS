@@ -2,7 +2,7 @@
 import CategoryLayout from '~/components/layout/CategoryLayout.vue';
 
 const priceData = {
-    priceVarints: ['мастер', 'эксперт'],
+    priceVariants: ['мастер', 'эксперт'],
     content: [
     {
         displayName: 'Тонирование/ стойкое окрашивание',
