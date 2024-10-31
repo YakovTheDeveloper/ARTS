@@ -2,10 +2,10 @@
   <div>
     <Header />
     <main class="main">
-      <NuxtPage />
+      <NuxtPage :openModal="openModal"/>
     </main>
     <Footer />
-    <OrderButton @click="openModal" />
+    <OrderButtonFixed @click="openModal" />
     <Modal :isVisible="isModalVisible" @close="closeModal">
 
       <Typo variant="h2" align="center" offset>Записаться или задать вопрос</Typo>
@@ -28,7 +28,7 @@
 
 <script setup lang="ts">
 import Card from '~/components/Card.vue';
-import OrderButton from '~/components/common/OrderButton.vue';
+import OrderButtonFixed from '~/components/common/OrderButtonFixed.vue';
 import ServiceSignUpForm from '~/components/form/ServiceSignUpForm.vue';
 import Modal from '~/components/Modal.vue';
 const isModalVisible = ref(false);

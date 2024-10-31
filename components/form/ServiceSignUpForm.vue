@@ -30,8 +30,8 @@
       </div>
     </div>
 
-    <div class="form-item">
-      <div v-if="contactMethod === 'text'" class="messaging-options">
+    <div class="form-item" v-if="contactMethod === 'text'">
+      <div class="messaging-options">
         <label>Выберите мессенджер:</label>
         <div>
           <label>
@@ -143,7 +143,7 @@ async function submitForm() {
 .form {
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 20px;
 }
 
 .form-item {
@@ -157,21 +157,22 @@ async function submitForm() {
 
 .form label {
   margin-bottom: 0.5rem;
-  font-size: 1rem;
+  font-size: 0.7rem;
   font-family: 'Raleway', sans-serif;
   font-weight: 300;
 }
 
 .form input {
-  padding: 10px;
+  padding: 8px 10px;
   border-radius: calc(var(--border-radius-m) / 2);
   border: 1px solid gray;
 }
 
-.label-description{
+.label-description {
   /* font-style: italic; */
   font-weight: 200;
-  opacity: 0.3;
+  opacity: 0.5;
+  margin-left: 2px;
 }
 
 .button {

@@ -20,7 +20,9 @@
                 label: 'мастер-визажист'
             },
         ]" />
-
+        <template #footer>
+            <Button variant="secondary" @click="props.openModal">Записаться</Button>
+        </template>
     </Card>
 </template>
 
@@ -45,4 +47,10 @@
 
 <script setup>
 import Magic from 'assets/graphics/magic.svg'
+import Button from '~/components/ui/Button.vue';
+const props = defineProps({
+    openModal: {
+        type: Function,
+    }
+})
 </script>

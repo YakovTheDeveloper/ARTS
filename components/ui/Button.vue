@@ -12,7 +12,8 @@ const props = defineProps({
     to: { type: String, default: null },          // URL for link buttons
     type: { type: String, default: 'button' },    // Button type: button, submit, or reset
     variant: { type: String, default: 'primary' },// Style variant: primary, secondary, etc.
-    isDisabled: { type: Boolean, default: false } // Disable the button
+    isDisabled: { type: Boolean, default: false }, // Disable the button
+    radius: { type: String, default: null } // Disable the button
 });
 
 const emits = defineEmits(['click']);
@@ -44,7 +45,7 @@ function handleClick(event) {
     padding: 0.75rem 1.5rem;
     font-size: 1rem;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.1s ease;
     text-decoration: none;
 }
 
@@ -67,11 +68,14 @@ function handleClick(event) {
 .base-button--secondary {
     color: #000000;
     border: 1px solid black;
-    background-color: white;
+    background-color: transparent;
 }
 
 .base-button--secondary:hover:not(.is-disabled) {
-    background-color: white;
     opacity: 0.6;
+}
+
+.base-button--tertriary{
+
 }
 </style>

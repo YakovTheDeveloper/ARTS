@@ -35,7 +35,7 @@
   
   .modal-content {
     background-color: var(--color-white);
-    padding: 60px 50px 40px;
+    padding: 60px 50px 30px;
     border-radius: var(--border-radius-m);
     position: relative;
     max-width: 90%;
@@ -56,7 +56,7 @@
     background: transparent;
     border: none;
     color: rgba(0, 0, 0, 0.183);
-    font-size: 1.5em;
+    font-size: 1.2em;
     cursor: pointer;
 
     &:hover{

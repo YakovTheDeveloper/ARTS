@@ -3,6 +3,9 @@
         <div class="card-inner">
             <slot></slot>
         </div>
+        <div class="card-footer" v-if="$slots.footer">
+            <slot name='footer'></slot>
+        </div>
     </section>
 </template>
 
@@ -31,5 +34,12 @@
     display: flex;
     flex-direction: column;
     /* gap: 65px; */
+}
+
+.card-footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
 }
 </style>

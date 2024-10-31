@@ -6,6 +6,12 @@ import ProductsUse from '~/components/landing/ProductsUse.vue';
 import OurClients from '~/components/landing/OurClients.vue';
 import Explore from '~/components/landing/Explore.vue';
 import Gallery from '~/components/landing/Gallery.vue';
+
+const props = defineProps({
+    openModal: {
+        type: Function,
+    }
+})
 </script>
 
 <template>
@@ -20,10 +26,10 @@ import Gallery from '~/components/landing/Gallery.vue';
 
     <Welcome />
     <!-- <Explore /> -->
-    <OurClients />
+    <OurClients :openModal='props.openModal' />
     <ProductsUse />
-    <Gallery/>
-    <OurTeam />
+    <Gallery :openModal='props.openModal'/>
+    <OurTeam :openModal='props.openModal'/>
 
 </template>
 

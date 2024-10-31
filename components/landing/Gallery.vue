@@ -18,15 +18,26 @@
             </div>
             <Explore />
         </div>
+        <template #footer @click="props.openModal">
+            <OrderButton/>
+            <!-- <Button variant="secondary" @click="props.openModal">Записаться</Button> -->
+        </template>
     </Card>
 </template>
 
 <script setup>
 import Card from '~/components/Card.vue';
+import OrderButton from '~/components/common/OrderButton.vue';
 import Explore from '~/components/landing/Explore.vue';
 import Typo from '~/components/Typo.vue';
 import Button from '~/components/ui/Button.vue';
 
+
+const props = defineProps({
+    openModal: {
+        type: Function,
+    }
+})
 </script>
 
 <style scoped>
