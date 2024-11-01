@@ -10,6 +10,7 @@ import { computed } from 'vue';
 const variantToTag: Record<string, string> = {
     h1: 'h1',
     h2: 'h2',
+    h3: 'h3',
     body: 'p',
     caption: 'p',
     link: 'p',
@@ -68,6 +69,12 @@ const computedClasses = computed(() => {
     font-weight: 300;
 }
 
+.typo--h3 {
+    font-size: 1.3em;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+}
+
 .typo--body {
     font-size: 1rem;
     line-height: 1.5rem;
@@ -87,7 +94,7 @@ const computedClasses = computed(() => {
 }
 
 .typo--color-black {
-    color: black;
+    color: rgb(10, 10, 10);
 }
 
 .typo--color-black-2 {
@@ -122,7 +129,7 @@ const computedClasses = computed(() => {
 }
 
 .offset.typo--h1 {
-    margin-bottom: 2.5rem;
+    margin-bottom: var(--offset-typo-h1);
 }
 
 

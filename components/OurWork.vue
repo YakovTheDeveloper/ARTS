@@ -24,6 +24,7 @@
 .our-work {
     display: flex;
     flex-direction: column;
+    align-items: flex-end;
     gap: var(--items-gap);
 }
 
@@ -89,8 +90,8 @@ const isModalVisible = ref(false);
 const selectedImage = ref('');
 
 const openModal = (imageSrc) => {
-    selectedImage.value = imageSrc;
-    isModalVisible.value = true;
+    // selectedImage.value = imageSrc;
+    // isModalVisible.value = true;
 };
 
 const closeModal = () => {

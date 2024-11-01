@@ -1,6 +1,7 @@
 <template>
     <component :is="isExternal ? 'a' : NuxtLink" :href="isExternal ? to : undefined" :to="isExternal ? undefined : to"
-        class="link" :target="isExternal ? '_blank' : undefined" :rel="isExternal ? 'noopener noreferrer' : undefined">
+        :class="['link', { inverseColor: props.inverseColor }]" :target="isExternal ? '_blank' : undefined"
+        :rel="isExternal ? 'noopener noreferrer' : undefined">
         <slot />
     </component>
 </template>
@@ -18,7 +19,13 @@ const props = defineProps({
         type: Boolean,
         default: false,
     },
+    inverseColor: {
+        type: Boolean,
+        default: false
+    }
 })
+
+
 </script>
 
 <style scoped>
@@ -31,6 +38,10 @@ const props = defineProps({
     position: relative;
     transition: all 0.2s ease-in-out;
     width: fit-content;
+}
+
+.link.inverseColor{
+    color: white;
 }
 
 .link:hover {
@@ -54,6 +65,10 @@ const props = defineProps({
     width: 100%;
     background-color: rgb(49, 49, 49);
     z-index: -1;
+}
+
+.link.inverseColor:before{
+    background-color: white;
 }
 
 .link:hover:before {

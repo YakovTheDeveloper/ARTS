@@ -15,6 +15,7 @@
     "gh-pages": "^6.2.0",
     "nuxt": "^3.13.0",
     "nuxt-svgo": "^4.0.6",
+    "swiper": "^11.1.14",
     "vue": "latest",
     "vue-router": "latest",
     "vue-yandex-maps": "^2.1.4"

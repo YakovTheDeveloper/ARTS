@@ -5,35 +5,21 @@
         </Typo>
         <Team :people="[
             {
-                name: 'Ольга',
                 label: 'окрашивание, выход из черного',
                 imgSrc: '/images/photos/customers/landing/1.jpg'
             },
 
             {
-                name: 'Анастасия',
                 label: 'вечерний макияж',
                 imgSrc: '/images/photos/customers/landing/customer-anastasia.jpg'
             },
             {
-                name: 'Милана',
                 label: 'вечерний макияж',
                 imgSrc: '/images/photos/customers/landing/customer-milana.jpg'
             },
             {
-                name: 'Анастасия',
-                label: 'аппаратный педикюр',
-                imgSrc: '/images/photos/customers/landing/customer-pedicure.jpg'
-            },
-            {
-                name: 'Наталья',
                 label: 'аппаратный маникюр',
                 imgSrc: '/images/photos/customers/landing/customer-1.jpg'
-            },
-            {
-                name: 'Евгения',
-                label: 'аппаратный маникюр',
-                imgSrc: '/images/photos/customers/landing/customer-manicure.jpg'
             },
         ]" />
         <template #footer>

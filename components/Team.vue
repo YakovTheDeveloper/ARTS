@@ -1,104 +1,87 @@
 <template>
-    <section class="team">
-        <figure v-for="(member) in people" class="member">
-            <div class="member-photo-part">
-                <p class="member-name">
-                    {{ member.name }}
-                    <!-- <span>
-                        {{ member.label }}
-                    </span> -->
-                </p>
-                <div class="photo-container">
-                    <NuxtImg :src="member.imgSrc" alt="Image" class="photo" />
-                </div>
-            </div>
-            <figcaption class="caption">
-                {{ member.label }}
-            </figcaption>
-        </figure>
+    <section class="team-carousel">
+        <swiper :slides-per-view="1" :space-between="20" :breakpoints="{
+            640: { slidesPerView: 2, spaceBetween: 20 },
+            768: { slidesPerView: 3, spaceBetween: 30 },
+            1024: { slidesPerView: 3, spaceBetween: 30 }
+        }" navigation :pagination="{ clickable: true }" :modules="modules" class="my-swiper">
+            <swiper-slide v-for="(member, index) in people" :key="index" class="swiper-slide">
+                <figure class="member">
+                    <div class="member-photo-part">
+                        <div class="photo-container">
+                            <NuxtImg :src="member.imgSrc" alt="Image" class="photo" />
+                        </div>
+                        <!-- <Typo v-if="member.name" class="member-name">{{ member.name }}</Typo> -->
+                    </div>
+                    <figcaption class="caption">
+                        <Typo v-if="member.name" class="member-name" variant="h3">{{ member.name }}</Typo>
+                        <Typo>{{ member.label }}</Typo>
+                    </figcaption>
+                </figure>
+            </swiper-slide>
+        </swiper>
     </section>
 </template>
 
-<style scoped>
-.team {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    /* grid-template-rows: repeat(auto-fit, minmax(440px, 1fr)); */
-    /* Adjust 200px as needed */
-    gap: 60px var(--items-gap);
-    align-items: center;
-    justify-content: center;
+<script setup>
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import { Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
-    @media (max-width: 480px) {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+defineProps({
+    people: {
+        type: Array,
+        required: true
     }
+});
+const modules = [Navigation, Pagination]
+</script>
+
+<style scoped>
+.team-carousel {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .member {
-    /* height: 100%; */
     flex-shrink: 0;
-    flex-grow: 0;
     min-width: 200px;
+    user-select: none;
+}
+
+.member-name {
+    /* position: absolute;
+    bottom: 10px;
+    left: 15px; */
+    /* display: inline-block; */
+    font-style: italic;
+}
+
+.photo-container {
+    height: 100%;
+}
+
+.photo {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
 
 .member-photo-part {
     height: min(65vh, 650px);
-    padding: 20px;
+    /* padding: 20px; */
     position: relative;
     background-color: rgb(103, 138, 138);
-    box-shadow: var(--human-card-box-shadow);
+    /* box-shadow: var(--human-card-box-shadow); */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border-radius: 25px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-
-    &:hover {
-        cursor: pointer;
-        transform: translate(0px, 2px);
-
-        -webkit-box-shadow: var(--box-shadow-card-hover);
-        -moz-box-shadow: var(--box-shadow-card-hover);
-        box-shadow: var(--box-shadow-card-hover);
-    }
-
-
-}
-
-.member-name {
-    display: flex;
-    flex-direction: column;
-    font-family: 'Montserrat', sans-serif;
-    position: relative;
-    width: 100%;
-    font-weight: 700;
-    color: white;
-    font-size: 1.1rem;
-    z-index: 1;
-    text-shadow: rgba(0, 0, 0, 0.3) 1px 1px 1px;
-
-    @media (max-width: 480px) {
-        font-size: 1.6rem;
-        font-weight: 500;
-    }
-}
-
-.photo-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.photo {
-    object-fit: cover;
-    position: relative;
-    height: 100%;
-    width: 100%;
 }
 
 .caption {
@@ -107,22 +90,70 @@
     font-weight: 400;
     margin-top: var(--container-padding);
     text-align: center;
-
-    @media (max-width: 480px) {
-        font-size: 1.3rem;
-        font-family: 'Montserrat', sans-serif;
-        margin-top: calc(var(--container-padding) * 1.5);
-        padding-right: 20px;
-        text-align: right;
-
-    }
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
 }
 </style>
 
-<script setup>
-defineProps({
-    people: Array,
-    required: true
-})
+<style>
+:root {
+    /* --swiper-pagination-color: red; */
+    --swiper-theme-color: rgb(152, 152, 152);
+}
 
-</script>
+.my-swiper {
+    padding-bottom: 40px;
+    /* Space for pagination dots */
+}
+
+.my-swiper:hover {
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        opacity: 1;
+    }
+}
+
+.my-swiper .swiper-button-next,
+.my-swiper .swiper-button-prev {
+    color: #fff;
+    transition: opacity 0.2s ease-in-out;
+    opacity: 0;
+    /* Change arrow color */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Add background color */
+    border-radius: 50%;
+    /* Make buttons circular */
+    width: 40px !important;
+    /* Custom size */
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    font-size: 18px;
+    /* Customize arrow icon size */
+}
+
+/* Add hover effect */
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Darken background on hover */
+}
+
+.swiper-button-next {
+    right: 10px;
+    /* Adjust button position */
+}
+
+.swiper-button-prev {
+    left: 10px;
+    /* Adjust button position */
+}
+</style>

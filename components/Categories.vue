@@ -5,7 +5,7 @@
                 :class="`/${category.link}` === $route.path ? 'hide' : 'show'">
 
 
-                <Link :to="`/${category.link}`">
+                <Link :to="`/${category.link}`" :inverseColor="props.inverseColor">
                 {{ category.name }}
                 </Link>
 
@@ -29,10 +29,18 @@
 .hide {
     display: none;
 }
+
+.inverse-link-color {
+    color: white;
+}
 </style>
 
 <script setup>
 import Link from '~/components/ui/Link.vue';
+
+const props = defineProps({
+    inverseColor: Boolean,
+  });
 
 const categories = [
     {

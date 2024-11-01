@@ -25,8 +25,8 @@
 <style scoped>
 .footer {
     width: 100%;
-    background-color: rgb(179, 179, 179);
-    background: linear-gradient(153deg, #2D3E4D 0%, rgb(0, 0, 0) 35%, rgb(36, 36, 36) 100%);
+    background-color: rgb(19, 19, 19);
+    /* background: linear-gradient(153deg, #2D3E4D 0%, rgb(0, 0, 0) 35%, rgb(36, 36, 36) 100%); */
 
     border-radius: var(--border-radius-l) var(--border-radius-l) 0 0;
 }
