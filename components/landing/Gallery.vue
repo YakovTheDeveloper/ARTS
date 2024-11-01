@@ -19,7 +19,7 @@
             <Explore />
         </div>
         <template #footer @click="props.openModal">
-            <OrderButton/>
+            <!-- <OrderButton/> -->
             <!-- <Button variant="secondary" @click="props.openModal">Записаться</Button> -->
         </template>
     </Card>

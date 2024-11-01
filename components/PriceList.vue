@@ -33,7 +33,7 @@
     <Modal :isVisible="isModalVisible" @close="closeModal">
         <div class="modal-service">
             <Card>
-                <Typo variant="h2" align="center" offset>Записаться</Typo>
+                <OrderButton/>
                 <Typo variant="h2" align="center">{{ selectedService?.description }}</Typo>
                 <ServiceSignUpForm />
             </Card>
@@ -157,6 +157,7 @@
 
 <script setup>
 import Card from '~/components/Card.vue';
+import OrderButton from '~/components/common/OrderButton.vue';
 import ServiceSignUpForm from '~/components/form/ServiceSignUpForm.vue';
 
 

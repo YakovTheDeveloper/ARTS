@@ -5,7 +5,7 @@
       <NuxtPage :openModal="openModal"/>
     </main>
     <Footer />
-    <OrderButtonFixed @click="openModal" />
+    <!-- <OrderButtonFixed @click="openModal" /> -->
     <Modal :isVisible="isModalVisible" @close="closeModal">
 
       <Typo variant="h2" align="center" offset>Записаться или задать вопрос</Typo>

@@ -37,7 +37,7 @@
             },
         ]" />
         <template #footer>
-            <Button variant="secondary" @click="props.openModal">Записаться</Button>
+            <OrderButton/>
         </template>
     </Card>
 </template>
@@ -68,6 +68,7 @@
 
 <script setup>
 import Magic from 'assets/graphics/magic.svg'
+import OrderButton from '~/components/common/OrderButton.vue';
 import Button from '~/components/ui/Button.vue';
 const props = defineProps({
     openModal: {

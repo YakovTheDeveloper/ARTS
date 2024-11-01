@@ -1,12 +1,18 @@
+<script setup lang="ts">
+import OrderButton from '~/components/common/OrderButton.vue';
+</script>
+
 <template>
     <div class="container">
         <section class="section">
             <div class="price-container">
 
-                <Typo variant="h1">
-                    <slot name="heading">
-                    </slot>
-                </Typo>
+                <heading class="heading">
+                    <Typo variant="h1">
+                        <slot name="heading">
+                        </slot>
+                    </Typo>
+                </heading>
                 <!-- <div class="price-description">
                         <span>мастер</span>
                         <span>эксперт</span>
@@ -31,6 +37,11 @@
     flex-direction: column;
     width: 100%;
     gap: var(--items-gap);
+}
+
+.heading{
+    display: flex;
+    justify-content: space-between;
 }
 
 .section {

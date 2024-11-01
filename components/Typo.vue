@@ -12,6 +12,7 @@ const variantToTag: Record<string, string> = {
     h2: 'h2',
     body: 'p',
     caption: 'p',
+    link: 'p',
 }
 
 const props = defineProps({
@@ -91,6 +92,12 @@ const computedClasses = computed(() => {
 
 .typo--color-black-2 {
     color: rgb(10, 10, 10);
+}
+
+.typo--link{
+    font-size: 1.6rem;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
 }
 
 

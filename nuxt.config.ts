@@ -6,7 +6,7 @@ export default defineNuxtConfig({
     '@/assets/styles/main.css'
   ],
   app: {
-    baseURL: '/'
+    baseURL: process.env.NODE_ENV === 'development' ? '/' : '/futura-beauty/'
   },
   modules: ['@nuxt/image', 'nuxt-svgo'],
   nitro: {

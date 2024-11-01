@@ -6,6 +6,7 @@
         <div class="photo-container">
             <img :src="data[0].src" alt="Slider Image" class="photo" @click="openModal" />
         </div>
+        <OrderButton/>
 
         <Modal :isVisible="isModalVisible" :imageSrc="selectedImage" @close="closeModal">
             <div class="modal-photo-container">
@@ -82,6 +83,7 @@
 
 <script setup>
 import { ref } from 'vue';
+import OrderButton from '~/components/common/OrderButton.vue';
 
 const isModalVisible = ref(false);
 const selectedImage = ref('');

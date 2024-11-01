@@ -72,13 +72,14 @@ import Explore from '~/components/landing/Explore.vue';
 }
 
 .image-container {
-    max-height: 50vh;
+    height: 400px;
     position: relative;
     border-radius: var(--border-radius-m);
     overflow: hidden;
 
     @media (max-width: 575.98px) {
-        width: 70%;
+        height: 200px;
+        width: 100%;
         margin: auto;
     }
 }
