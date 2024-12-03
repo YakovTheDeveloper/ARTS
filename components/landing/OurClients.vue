@@ -1,30 +1,23 @@
 <template>
     <Card class="our-clients">
         <Typo variant="h1" class="title" align="center" offset>
-            Подчеркнем вашу красоту
+            ИДЕЯ
         </Typo>
         <Team :people="[
             {
-                label: 'окрашивание, выход из черного',
-                imgSrc: '/images/photos/customers/landing/1.jpg'
+                label: 'Ижевск – креативный и творческий город',
+                imgSrc: '/images/photos/idea/1.jpg'
             },
 
             {
-                label: 'вечерний макияж',
-                imgSrc: '/images/photos/customers/landing/customer-anastasia.jpg'
+                label: 'В Ижевске есть Институт искусства и дизайна УДГУ',
+                imgSrc: '/images/photos/idea/2.jpg'
             },
             {
-                label: 'вечерний макияж',
-                imgSrc: '/images/photos/customers/landing/customer-milana.jpg'
-            },
-            {
-                label: 'аппаратный маникюр',
-                imgSrc: '/images/photos/customers/landing/customer-1.jpg'
+                label: 'В Ижевске – работает уникальный человек Сергей Орлов',
+                imgSrc: '/images/photos/idea/3.jpg'
             },
         ]" />
-        <template #footer>
-            <OrderButton/>
-        </template>
     </Card>
 </template>
 

@@ -28,7 +28,7 @@
             </div>
         </div>
     </div>
-    <Modal :isVisible="isModalVisible" @close="closeModal">
+    <!-- <Modal :isVisible="isModalVisible" @close="closeModal">
         <div class="modal-service">
             <Card>
                 <OrderButton />
@@ -36,7 +36,7 @@
                 <ServiceSignUpForm />
             </Card>
         </div>
-    </Modal>
+    </Modal> -->
 </template>
 
 <style scoped>

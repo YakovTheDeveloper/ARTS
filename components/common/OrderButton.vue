@@ -20,6 +20,5 @@ const props = defineProps({
 <style scoped>
 .order {
     font-style: italic;
-    letter-spacing: 1px;
 }
 </style>

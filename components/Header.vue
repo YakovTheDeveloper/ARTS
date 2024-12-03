@@ -1,9 +1,9 @@
 <template>
-    <header class="header">
+    <!-- <header class="header">
         <NuxtLink to="/">
             <Logo :class="['logo', $route.path === '/' ? 'logo-mobile-main' : null]" :fontControlled="false" />
         </NuxtLink>
-    </header>
+    </header> -->
 </template>
 
 <style scoped>
@@ -17,7 +17,7 @@
 }
 
 .logo {
-    height: 40px;
+    height: 120px;
 }
 
 .logo-mobile-main {

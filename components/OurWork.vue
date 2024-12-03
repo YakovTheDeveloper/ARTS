@@ -6,16 +6,15 @@
         <div class="photo-container">
             <img :src="data[0].src" alt="Slider Image" class="photo" @click="openModal" />
         </div>
-        <OrderButton/>
 
-        <Modal :isVisible="isModalVisible" :imageSrc="selectedImage" @close="closeModal">
+        <!-- <Modal :isVisible="isModalVisible" :imageSrc="selectedImage" @close="closeModal">
             <div class="modal-photo-container">
                 <button v-show="!isFirst" :class="['control-button', 'control-button-left']" @click="prevImage">
                     < </button>
                         <img :src="currentImage.src" alt="Slider Image" class="photo" @click="nextImage" />
                         <button :class="['control-button', 'control-button-right']" @click="nextImage">></button>
             </div>
-        </Modal>
+        </Modal> -->
 
     </div>
 </template>

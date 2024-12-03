@@ -6,63 +6,69 @@ import Explore from '~/components/landing/Explore.vue';
 <!-- <NuxtImg src="images/photos/landing/mobile/welcome-1.jpg" alt="Image" class="photo" /> -->
 
 <template>
-    <div class="video-container-mobile">
-        <video autoplay muted loop playsinline class="video-background">
-            <source src="/video/welcome-2.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-        </video>
+    <!-- <div class="video-container-mobile">
         <div class="video-container-aside">
             <Typo color="white" variant="h1" class="mobile-title">
                 <span>Яркий</span> эпизод Вашей жизни
             </Typo>
-            <!-- <Typo color="white" variant="h1" class="mobile-title">Вашей жизни</Typo> -->
         </div>
+    </div> -->
+    <Card class="welcome">
         <div class="spot spot-1"></div>
         <div class="spot spot-2"></div>
         <div class="spot spot-3"></div>
-    </div>
-    <Card class="welcome">
         <div class="main">
-            <article class="text-content">
-                <div>
-                    <Typo variant="h1" align="center" color="black-2" offset>
-                        Приятно познакомиться
-                    </Typo>
-                    <Typo class="description">
-                        Уход за собой — комплекс процедур, которые продлевают молодость, помогают сохранить
-                        положительный
-                        настрой.
-                        Сияющая кожа, чистые аккуратно уложенные волосы, привлекательный макияж, стильный маникюр,
-                        красивая
-                        одежда —
-                        все это орудия, с помощью которых каждая женщина может стать королевой.
-                    </Typo>
-                </div>
-            </article>
-            <!-- <div class="image-container">
-                <NuxtImg src="images/photos/welcome.jpg" alt="Image" class="photo" />
-            </div> -->
-        </div>
-        <Categories class="categories" :inverseColor="true" />
 
-        <!-- <div class="image-container-mobile-bg">
-            <NuxtImg src="images/bg/background-2.webp" alt="Image" class="photo-mobile-bg" />
-        </div> -->
+
+            <div class="header">
+                <Typo variant="h1" align="center" color="black-2" offset>
+                    ТВОРЧЕСКАЯ МАНУФАКТУРА
+                </Typo>
+                <Typo variant="subtitle" align="left" offset color="orange">
+                    как это будет
+                </Typo>
+            </div>
+            <div>
+                <Logo class="logo" :fontControlled="false" />
+            </div>
+            <div class="footer">
+                <Typo variant="subtitle" align="center" color="black-2" offset>
+                    2024-2025
+                </Typo>
+            </div>
+
+        </div>
+        <!-- <Categories class="categories" :inverseColor="true" /> -->
     </Card>
 </template>
 
 <style scoped>
+.header {
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+.logo {
+    display: flex;
+    margin: 0 auto;
+    color: black;
+    height: 240px;
+}
+
 .welcome {
-    height: calc(100vh - 80px + var(--container-padding));
+    overflow: hidden;
+    height: 100vh;
     margin-bottom: 0;
     position: relative;
 
     @media (max-width: 575.98px) {
         /* display: none; */
-        background: rgb(0, 0, 0);
+        /* background: rgb(0, 0, 0); */
     }
 
 }
+
+.footer {}
 
 .image-container-mobile {}
 
@@ -74,8 +80,8 @@ import Explore from '~/components/landing/Explore.vue';
     overflow: hidden;
     height: 93vh;
     width: 100%;
-    background: rgb(33, 33, 33);
-    background: rgb(23, 23, 23);
+    /* background: rgb(33, 33, 33);
+    background: rgb(23, 23, 23); */
     /* background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, 0.85) 85%, rgba(0, 0, 0, 0.9) 100%); */
     z-index: 1;
 
@@ -92,7 +98,7 @@ import Explore from '~/components/landing/Explore.vue';
         z-index: 0;
         width: 100%;
         height: 100%;
-        background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0.85) 85%, rgba(0, 0, 0, 0.93) 100%);
+        /* background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0.85) 85%, rgba(0, 0, 0, 0.93) 100%); */
     }
 }
 
@@ -110,7 +116,6 @@ import Explore from '~/components/landing/Explore.vue';
         font-style: italic;
         font-size: 2.5rem;
         font-weight: 100;
-        letter-spacing: -3px;
     }
 }
 
@@ -143,10 +148,11 @@ import Explore from '~/components/landing/Explore.vue';
 }
 
 .main {
-    margin-top: 10px;
-    display: grid;
-    grid-template-columns: 5fr 6fr;
-    gap: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 100%;
+    justify-content: space-evenly;
     z-index: 1;
 
     @media (max-width: 575.98px) {
@@ -215,22 +221,12 @@ import Explore from '~/components/landing/Explore.vue';
     z-index: 2;
 }
 
-.logo {
-    position: absolute;
-    top: 50px;
-    left: 60px;
-    /* transform: translateX(-50%); */
-
-    width: 135px;
-    color: white;
-}
-
 .spot {
     position: absolute;
     width: 200vw;
     /* Make it large to cover the screen */
     height: 200vh;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent 60%);
+    background: radial-gradient(circle, rgba(254, 220, 2, 0.862), transparent 60%);
     animation: spotMove 10s ease-in-out infinite, spotFade 5s ease-in-out infinite;
     opacity: 0.3;
 }
@@ -239,18 +235,24 @@ import Explore from '~/components/landing/Explore.vue';
     left: 10%;
     top: 10%;
     animation-duration: 12s;
+    background: radial-gradient(circle, rgba(13, 187, 140, 0.862), transparent 30%);
+
 }
 
 .spot-2 {
     right: 15%;
     bottom: 15%;
     animation-duration: 15s;
+    background: radial-gradient(circle, rgba(8, 215, 15, 0.862), transparent 30%);
+
 }
 
 .spot-3 {
     left: 50%;
     top: 50%;
     animation-duration: 8s;
+    background: radial-gradient(circle, rgba(230, 255, 9, 0.862), transparent 30%);
+
 }
 
 @keyframes spotMove {

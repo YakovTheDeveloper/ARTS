@@ -14,6 +14,7 @@ const variantToTag: Record<string, string> = {
     body: 'p',
     caption: 'p',
     link: 'p',
+    subtitle: 'p', // Add subtitle variant
 }
 
 const props = defineProps({
@@ -21,7 +22,7 @@ const props = defineProps({
         type: String,
         default: 'body',
         validator: (value: string) => {
-            return ['h1', 'h2', 'body', 'caption'].includes(value);
+            return ['h1', 'h2', 'body', 'caption', 'subtitle'].includes(value); // Include subtitle in validator
         },
     },
     color: {
@@ -55,16 +56,13 @@ const computedClasses = computed(() => {
 
 <style scoped>
 .typo--h1 {
-    font-size: 1.4rem;
+    font-size: var(--typo-h1);
     font-family: "Montserrat", sans-serif;
     font-weight: 600;
-    /* text-shadow: rgba(8, 0, 67, 0.154) 1px 0 5px; */
-    letter-spacing: -1px;
-    /* text-transform: uppercase; */
 }
 
 .typo--h2 {
-    font-size: 1.3em;
+    font-size: 2em;
     font-family: 'Raleway', sans-serif;
     font-weight: 300;
 }
@@ -80,13 +78,22 @@ const computedClasses = computed(() => {
     line-height: 1.5rem;
     font-family: 'Raleway', sans-serif;
     font-weight: 400;
-
 }
 
 .typo--caption {
     font-family: 'Raleway', sans-serif;
     font-size: 1.2rem;
     font-weight: 600;
+}
+
+.typo--subtitle {
+    /* Add subtitle styles */
+    font-size: 2.6rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    color: #6c757d;
+    /* A lighter grey color for subtitles */
+    /* Slightly increased line height for readability */
 }
 
 .typo--color-white {
@@ -101,15 +108,19 @@ const computedClasses = computed(() => {
     color: rgb(10, 10, 10);
 }
 
-.typo--link{
+.typo--link {
     font-size: 1.6rem;
     font-family: 'Raleway', sans-serif;
     font-weight: 300;
 }
 
-
 .typo--color-red {
     color: red;
+}
+
+
+.typo--color-orange {
+    color: orange;
 }
 
 .typo--color-blue {
@@ -131,7 +142,6 @@ const computedClasses = computed(() => {
 .offset.typo--h1 {
     margin-bottom: var(--offset-typo-h1);
 }
-
 
 /* Add more colors and styles as needed */
 </style>

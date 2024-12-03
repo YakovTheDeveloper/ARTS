@@ -64,7 +64,9 @@
     --our-brands-height: 50px;
 
     --human-card-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    --offset-typo-h1: 2.5rem;
+    --offset-typo-h1: 1rem;
+
+    --typo-h1: 2.5rem;
 
     /* --root-font-size: 18px; */
 
@@ -76,6 +78,8 @@
         --our-brands-height: 25px;
         --human-card-box-shadow: none;
         --offset-typo-h1: 1.5rem;
+
+        --typo-h1: 2rem;
     }
 
     /* Small devices (landscape phones, 576px and up) */

@@ -5,9 +5,9 @@
                 <div class="data">
                     <Logo class="logo" :fontControlled="false" />
                     <div class="contacts">
-                        <p>жк Futura, ул. Холмогорова, 17А</p>
+                        <!-- <p>жк Futura, ул. Холмогорова, 17А</p>
                         <p>info@beautylabstore.ru</p>
-                        <p>+7 926 100 33 38</p>
+                        <p>+7 926 100 33 38</p> -->
                     </div>
                 </div>
                 <ul class="list">
@@ -99,12 +99,12 @@
 import Logo from 'assets/graphics/logo.svg'
 
 const menuItems = [
-    { url: "/about-us", label: "о нас" },
-    { url: "/vacancies", label: "вакансии" },
-    { url: "/team", label: "наша команда" },
-    { url: "/ask-question", label: "задать вопрос" },
-    { url: "/promotions", label: "акции" },
-    { url: "/gallery", label: "галерея" },
+    // { url: "/about-us", label: "о нас" },
+    // { url: "/vacancies", label: "вакансии" },
+    // { url: "/team", label: "наша команда" },
+    // { url: "/ask-question", label: "задать вопрос" },
+    // { url: "/promotions", label: "акции" },
+    // { url: "/gallery", label: "галерея" },
     // { url: "/blog", label: "блог" }
 ];
 </script>
